@@ -38,7 +38,6 @@ jobs:
           dbt deps
           dbt source freshness --profiles-dir .
           dbt build --profiles-dir .
-          dbt run-operation drop_old_relations
           dbt docs generate
 
       - name: Deploy to GitHub Pages
