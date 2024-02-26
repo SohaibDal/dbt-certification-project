@@ -26,7 +26,7 @@ The fact and dimension tables are described below.
 - **dim_rankings:** a sub-dimension table associated to `dim_boardgames` that gets data from `stg_boardgames__rankings` combined with `int_boardgames__boardgames_filtered`.
 
 All these models should be materialized as tables.
-**Hint:** You can use a `tag` to accomplish that. You can check the [previous challenge](../16_add_tags/16_add_tags.md) as a reminder. 
+**Hint:** You can use a `+materialized` config to accomplish that.
 
 ### Surrogate Keys
 A surrogate key in a database is a unique identifier for each entity in the database. The surrogate key is not derived from application data, unlike a natural (or business) key.
