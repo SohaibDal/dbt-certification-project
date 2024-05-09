@@ -40,6 +40,10 @@ jobs:
           dbt build --profiles-dir .
           dbt docs generate
 
+      - name: Drop CI schema
+        working-directory: ./dbt_finished_project
+        run: dbt run-operation drop_pr_ci_schema
+
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v4
