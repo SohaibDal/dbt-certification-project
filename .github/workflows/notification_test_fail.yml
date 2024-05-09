@@ -49,7 +49,11 @@ jobs:
           subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
           # email body as text
           body: |
-            ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}. Repo url: ${{ github.server_url }}/${{ github.repository }}
+            Job: ${{ github.job }}
+            Workflow: ${{ github.workflow }}
+            Repo url: ${{ github.server_url }}/${{ github.repository }}
+            Run id url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
           # comma-separated string, send email to
           to: filipe_balseiro@hakkoda.io, gabriela_dias@hakkoda.io
           # from email name
