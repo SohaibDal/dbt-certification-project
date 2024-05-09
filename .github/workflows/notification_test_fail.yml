@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  ci-workflow:
+  notification-test:
     runs-on: ubuntu-latest
     env:
       DBT_USER: ${{ secrets.DBT_USER }}
@@ -48,8 +48,9 @@ jobs:
           # email subject
           subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
           # email body as text
-          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          body: |
+            ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}. Repo url: ${{ github.server_url }}/${{ github.repository }}
           # comma-separated string, send email to
-          to: fbalseiro@gmail.com
+          to: filipe_balseiro@hakkoda.io, gabriela_dias@hakkoda.io
           # from email name
-          from: XYZ
+          from: GitHub Actions Metalhead
