@@ -388,10 +388,10 @@ In that scenario, if you want to to get access to that on your local machine, yo
 
 ## 10. Additional Content
 - [dbt Project Checklist](https://docs.google.com/spreadsheets/d/1-76_IaWnq9d6vPZjltZBHR-8kL5lnrqu/edit?usp=sharing&ouid=114687234302613403012&rtpof=true&sd=true)
-- [dbt Sytle Guide](./docs/style_guide.md)
+- [dbt Style Guide](./docs/style_guide.md)
 - GitHub Workflows for GitHub Actions:
   - [Continuous Integration](/.github/workflows/ci.yml): Runs on Pull Requests to main branch
-  - [Daily dbt job](/.github/workflows/dbt_build.yml): Runs daily on a schedule using cron to build and test source freshness, models, snapshots and seeds
+  - [Daily dbt job](/.github/workflows/scheduled_daily_run.yml): Runs daily on a schedule using cron to build and test source freshness, models, snapshots and seeds
   - [Upload to Snowflake](./.github/workflows/upload_to_snowflake.yml): Runs daily on a schedule using cron to execute a [python script](./.github/scripts/upload_to_snowflake.py) that loads a `.csv` file to a stage on Snowflake
 - [Pull Request Template](./.github/pull_request_template.md): Template that is applied each time a Pull Request is triggered
 - Snowflake Scripts:

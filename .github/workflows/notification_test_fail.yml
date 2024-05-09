@@ -1,0 +1,55 @@
+name: notification test email
+
+on:
+  push:
+    branches: ["develop"]
+
+  workflow_dispatch:
+
+jobs:
+  ci-workflow:
+    runs-on: ubuntu-latest
+    env:
+      DBT_USER: ${{ secrets.DBT_USER }}
+      DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+      SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+      SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+      SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+      SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dbt
+        run: pip3 install dbt-snowflake
+
+      - name: Deploy & Test Models
+        working-directory: ./dbt_finished_project
+        run: |
+          dbt deps
+          dbt build --profiles-dir . --target ci_qa
+
+      - name: Send mail
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          # mail server settings
+          server_address: smtp.gmail.com
+          server_port: 465
+          # user credentials
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          # email subject
+          subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+          # email body as text
+          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          # comma-separated string, send email to
+          to: filipe_balseiro@hakkoda.io, gabriela_dias@hakkoda.io
+          # from email name
+          from: XYZ
