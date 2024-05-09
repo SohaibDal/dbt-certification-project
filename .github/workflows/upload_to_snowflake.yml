@@ -21,6 +21,7 @@ jobs:
 
       - name: Install Snowflake Connector
         run: |
+          pip install --upgrade pip
           pip install snowflake-connector-python pandas
 
       - name: Upload to Snowflake
@@ -34,6 +35,30 @@ jobs:
           SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
           SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+
+      - name: Send mail
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          # mail server settings
+          server_address: smtp.gmail.com
+          server_port: 465
+          # user credentials
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          # email subject
+          subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+          # email body as text
+          body: |
+            Job: ${{ github.job }}
+            Workflow: ${{ github.workflow }}
+            Repo url: ${{ github.server_url }}/${{ github.repository }}
+            Run id url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          # comma-separated string, send email to
+          to: filipe_balseiro@hakkoda.io, gabriela_dias@hakkoda.io
+          # from email name
+          from: GitHub Actions Metalhead
 
   rerun-failed-jobs:
     runs-on: ubuntu-latest

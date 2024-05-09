@@ -4,3 +4,4 @@
 /ingestion/*
 snowflake.log
 .env
+log/
