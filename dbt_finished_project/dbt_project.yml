@@ -36,7 +36,6 @@ on-run-start:
   - "{{ audit_log('run_start') }}"
 on-run-end: 
   - "{{ audit_log('run_end') }}"
-  - "{{ clean_stale_models(days=30, dry_run=False) }}"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models

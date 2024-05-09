@@ -39,6 +39,7 @@ jobs:
           dbt source freshness --profiles-dir .
           dbt build -s +tag:daily+ --profiles-dir .
           dbt docs generate
+          dbt run-operation clean_stale_models
 
       - name: Deploy to GitHub Pages
         if: success()
