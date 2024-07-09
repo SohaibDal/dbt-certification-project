@@ -68,7 +68,7 @@ jobs:
             Run id url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
           # comma-separated string, send email to
-          to: filipe_balseiro@hakkoda.io, gabriela_dias@hakkoda.io
+          to: artur_trindade@hakkoda.io
           # from email name
           from: GitHub Actions Metalhead
 
