@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: boardgame
+    database: boardgame  
+    schema: raw  
+    tables:
+      - name: artists
+      - name: boardgames
+      - name: categories
+      - name: designers
+      - name: mechanics
+      - name: publishers
+      - name: rankings
+      - name: reviews
+      - name: users

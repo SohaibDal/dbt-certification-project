@@ -1,0 +1,13 @@
+boardgame_project: # name of the profile described on dbt_project.yml
+  outputs:
+    dev:
+      account: jsa18243
+      database: BOARDGAME
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      role: transform
+      schema: dbt_Aqureshi # dbt_[first-initial-last-name] (ex: dbt_fbalseiro)
+      threads: 4
+      type: snowflake
+      user: "{{ env_var('DBT_USER') }}"
+      warehouse: DBT_CERTIFICATION_PROJECT_WH
+  target: dev
