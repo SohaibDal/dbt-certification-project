@@ -2472,3 +2472,96 @@ https://docs.getdbt.com/docs/configure-your-profile
 [0m00:23:55.073989 [debug] [MainThread]: Command `dbt run` succeeded at 00:23:55.073920 after 0.65 seconds
 [0m00:23:55.074214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105d02e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d49000>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x159c08a00>]}
 [0m00:23:55.074419 [debug] [MainThread]: Flushing usage events
+[0m00:25:10.278367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c97010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121aa410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121aa830>]}
+
+
+============================== 00:25:10.281075 | 34ecef96-a55d-41d1-b0f3-e34bb82d66d1 ==============================
+[0m00:25:10.281075 [info ] [MainThread]: Running with dbt=1.7.4
+[0m00:25:10.281426 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/altamashqureshi/Develop/dbt-certification-project', 'log_path': '/Users/altamashqureshi/Develop/dbt-certification-project/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt compile --select boardgames_sources', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m00:25:10.813482 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '34ecef96-a55d-41d1-b0f3-e34bb82d66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121aa7d0>]}
+[0m00:25:10.854455 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '34ecef96-a55d-41d1-b0f3-e34bb82d66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13623e5f0>]}
+[0m00:25:10.855174 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m00:25:10.865032 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m00:25:10.888428 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:25:10.888739 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:25:10.891504 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '34ecef96-a55d-41d1-b0f3-e34bb82d66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1365440d0>]}
+[0m00:25:10.896393 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '34ecef96-a55d-41d1-b0f3-e34bb82d66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x136511270>]}
+[0m00:25:10.896663 [info ] [MainThread]: Found 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m00:25:10.896884 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '34ecef96-a55d-41d1-b0f3-e34bb82d66d1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x136511300>]}
+[0m00:25:10.897231 [warn ] [MainThread]: The selection criterion 'boardgames_sources' does not match any nodes
+[0m00:25:10.897751 [info ] [MainThread]: 
+[0m00:25:10.897966 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m00:25:10.898244 [debug] [MainThread]: Command end result
+[0m00:25:10.902999 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 0.6551292, "process_user_time": 2.997085, "process_kernel_time": 0.346844, "process_mem_max_rss": "158089216", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m00:25:10.903468 [debug] [MainThread]: Command `dbt compile` succeeded at 00:25:10.903373 after 0.66 seconds
+[0m00:25:10.903778 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c97010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x13605ed10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x136510c40>]}
+[0m00:25:10.904109 [debug] [MainThread]: Flushing usage events
+[0m00:31:21.178207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073341c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10968dbd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10968df90>]}
+
+
+============================== 00:31:21.180991 | 9a12f7b2-85bb-48b3-b67f-ec94cd2115fe ==============================
+[0m00:31:21.180991 [info ] [MainThread]: Running with dbt=1.7.4
+[0m00:31:21.181324 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/altamashqureshi/Develop/dbt-certification-project', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/altamashqureshi/Develop/dbt-certification-project/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt compile', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m00:31:21.720002 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9a12f7b2-85bb-48b3-b67f-ec94cd2115fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f0e3a90>]}
+[0m00:31:21.761031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9a12f7b2-85bb-48b3-b67f-ec94cd2115fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f2479d0>]}
+[0m00:31:21.761556 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m00:31:21.772874 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m00:31:21.796391 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:31:21.796646 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:31:21.799467 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9a12f7b2-85bb-48b3-b67f-ec94cd2115fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f6440d0>]}
+[0m00:31:21.806866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9a12f7b2-85bb-48b3-b67f-ec94cd2115fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f609120>]}
+[0m00:31:21.807195 [info ] [MainThread]: Found 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m00:31:21.807425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a12f7b2-85bb-48b3-b67f-ec94cd2115fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f609240>]}
+[0m00:31:21.808335 [info ] [MainThread]: 
+[0m00:31:21.808560 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m00:31:21.808866 [debug] [MainThread]: Command end result
+[0m00:31:21.814095 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 0.66881496, "process_user_time": 3.015161, "process_kernel_time": 0.36648, "process_mem_max_rss": "156827648", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m00:31:21.814437 [debug] [MainThread]: Command `dbt compile` succeeded at 00:31:21.814368 after 0.67 seconds
+[0m00:31:21.814665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073341c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f2479d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f608a00>]}
+[0m00:31:21.814865 [debug] [MainThread]: Flushing usage events
+[0m00:33:35.397476 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ca9930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1117a9c60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1117aa020>]}
+
+
+============================== 00:33:35.399916 | b2920198-a759-42d4-8159-801e9aa0a4db ==============================
+[0m00:33:35.399916 [info ] [MainThread]: Running with dbt=1.7.4
+[0m00:33:35.400250 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/altamashqureshi/Develop/dbt-certification-project/logs', 'debug': 'False', 'profiles_dir': '/Users/altamashqureshi/Develop/dbt-certification-project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt compile', 'send_anonymous_usage_stats': 'True'}
+[0m00:33:35.932111 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b2920198-a759-42d4-8159-801e9aa0a4db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1117320e0>]}
+[0m00:33:35.973121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b2920198-a759-42d4-8159-801e9aa0a4db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11743d990>]}
+[0m00:33:35.973630 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m00:33:35.983510 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m00:33:36.006838 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:33:36.007088 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:33:36.009823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b2920198-a759-42d4-8159-801e9aa0a4db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1176440d0>]}
+[0m00:33:36.014545 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b2920198-a759-42d4-8159-801e9aa0a4db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x117601270>]}
+[0m00:33:36.014797 [info ] [MainThread]: Found 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m00:33:36.015016 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b2920198-a759-42d4-8159-801e9aa0a4db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x117601330>]}
+[0m00:33:36.015650 [info ] [MainThread]: 
+[0m00:33:36.015857 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m00:33:36.016144 [debug] [MainThread]: Command end result
+[0m00:33:36.021357 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 0.6538986, "process_user_time": 3.11355, "process_kernel_time": 0.244479, "process_mem_max_rss": "160612352", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m00:33:36.021709 [debug] [MainThread]: Command `dbt compile` succeeded at 00:33:36.021643 after 0.65 seconds
+[0m00:33:36.021929 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ca9930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x117601270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1176008b0>]}
+[0m00:33:36.022117 [debug] [MainThread]: Flushing usage events
+[0m00:34:46.024182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076c53f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a19ba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a19f60>]}
+
+
+============================== 00:34:46.026695 | b4d1a87d-ad6e-4a18-ac87-77c9b4ba5f8c ==============================
+[0m00:34:46.026695 [info ] [MainThread]: Running with dbt=1.7.4
+[0m00:34:46.027054 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/altamashqureshi/Develop/dbt-certification-project/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/altamashqureshi/Develop/dbt-certification-project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt compile', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:34:46.568782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b4d1a87d-ad6e-4a18-ac87-77c9b4ba5f8c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1099a4580>]}
+[0m00:34:46.609853 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b4d1a87d-ad6e-4a18-ac87-77c9b4ba5f8c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f645450>]}
+[0m00:34:46.610366 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m00:34:46.620668 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m00:34:46.643429 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:34:46.643673 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:34:46.646495 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b4d1a87d-ad6e-4a18-ac87-77c9b4ba5f8c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11fa440d0>]}
+[0m00:34:46.650752 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b4d1a87d-ad6e-4a18-ac87-77c9b4ba5f8c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11fa091b0>]}
+[0m00:34:46.651019 [info ] [MainThread]: Found 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m00:34:46.651239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b4d1a87d-ad6e-4a18-ac87-77c9b4ba5f8c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11fa09240>]}
+[0m00:34:46.652044 [info ] [MainThread]: 
+[0m00:34:46.652299 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m00:34:46.652606 [debug] [MainThread]: Command end result
+[0m00:34:46.657394 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 0.6643288, "process_user_time": 2.986389, "process_kernel_time": 0.358886, "process_mem_max_rss": "159105024", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m00:34:46.657760 [debug] [MainThread]: Command `dbt compile` succeeded at 00:34:46.657688 after 0.66 seconds
+[0m00:34:46.657994 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076c53f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f65e1a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11fa088b0>]}
+[0m00:34:46.658225 [debug] [MainThread]: Flushing usage events
