@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: boardgames
-    database: boardgame  
-    schema: raw  
+    database: boardgame
+    schema: raw
     tables:
       - name: artists
       - name: boardgames
