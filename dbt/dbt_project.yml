@@ -36,6 +36,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 
 models:
-  dbt_capstone_project:
+  dbt_certification_project:
     staging:
       +materialized: view
+
+seeds:
+  dbt_certification_project:
+    +column_types:
+      country_name: varchar(100)
+      country_code: varchar(3)

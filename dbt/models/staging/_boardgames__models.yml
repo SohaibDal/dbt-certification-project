@@ -10,3 +10,5 @@ models:
   - name: stg_boardgames__rankings
   - name: stg_boardgames__reviews
   - name: stg_boardgames__users
+  - name: stg_country_codes
+  - name: stg_country_codes_users_ref
