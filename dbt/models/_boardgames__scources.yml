@@ -1,0 +1,194 @@
+version: 2
+
+sources:
+  - name: boardgame
+    database: boardgame  
+    schema: raw  
+    tables:
+      - name: artists
+        description: Table with the artists names associated to their respective boardgames
+        columns:
+          - name: artists
+            description: Name of the artists responsible for the art and graphical design of the boardgame
+            tests:
+              - not_null
+          - name: game_id
+            description: Boardgame unique identifier
+            tests:
+              - not_null
+      - name: boardgames
+        description: Table with boardgames main properties
+        columns:
+          - name: game_id
+            description: Boardgame unique identifier
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Name of the Boardgame
+            tests:
+              - not_null
+          - name: type
+            description: Type of game (ex. boardgame)
+            tests:
+              - accepted_values:
+                  values: [bgsleeve, boardgame, boardgameaccessory, boardgameexpansion, boardgameissue, puzzle, rpgissue, rpgitem, videogame, videogamecompilation, videogameexpansion, videogamehardware]
+          - name: rating
+            description: average from all the ratings from the reviews (0-10)
+          - name: weight
+            description: average complexity rating from the users (0-5)
+          - name: year_published
+            description: year the boardgame was published
+            tests:
+              - not_null
+          - name: min_players
+            description: minimum number of players supported by the boardgame
+            tests:
+              - not_null
+          - name: max_players
+            description: maximum number of players supported by the boardgame
+            tests:
+              - not_null
+          - name: min_play_time
+            description: minimum playtime estimated to play the boardgame (minutes)
+            tests:
+              - not_null
+          - name: max_play_time
+            description: maximum playtime estimated to play the boardgame (minutes)
+            tests:
+              - not_null
+          - name: min_age
+            description: minimum age recommended to play the boardgame
+            tests:
+              - not_null
+          - name: owned_by
+            description: number of people that own the boardgame
+            tests:
+              - not_null
+      - name: categories
+        description: Table with the representation of categories names associated to each boardgame
+        columns:
+          - name: categories
+            description: Name of the categories that each boardgame belongs
+            tests:
+              - not_null
+          - name: game_id
+            description: Boardgame unique identifier
+            tests:
+              - not_null
+      - name: designers
+        description: Table with the designers names associated to each boardgame
+        columns:
+          - name: designers
+            description: Name of the designers responsible for the mechanics and concept implementation of the boardgame
+            tests:
+              - not_null
+          - name: game_id
+            description: Boardgame unique identifier
+            tests:
+              - not_null
+      - name: mechanics
+        description: Table with the mechanics names associated to each boardgame
+        columns:
+          - name: mechanics
+            description: Name of the mechanics that each boardgame delivers
+            tests:
+              - not_null
+          - name: game_id
+            description: Boardgame unique identifier
+            tests:
+              - not_null
+      - name: publishers
+        description: Table with the publishers names associated to each boardgame
+        columns:
+          - name: publishers
+            description: Name of the publishers that support the distribution of the boardgames
+            tests:
+              - not_null
+          - name: game_id
+            description: Boardgame unique identifier
+            tests:
+              - not_null
+      - name: rankings
+        description: Daily ranking of boardgames based on users ratings
+        columns:
+          - name: id
+            description: Boardgame unique identifier
+            tests:
+              - unique
+              - not_null
+          - name: Name
+            description: Name of the Boardgame
+            quote: true
+            tests:
+              - not_null
+          - name: Year
+            description: year the boardgame was published
+            quote: true
+            tests:
+              - not_null
+          - name: Rank
+            description: number representing the ranking of the boardgame (lower the better)
+            quote: true
+            tests:
+              - unique
+              - not_null
+          - name: Average
+            description: average from all the ratings from the reviews
+            quote: true
+            tests:
+              - not_null
+          - name: Bayes average
+            description: >
+              In order to prevent a new or rare game with only a few high ratings from taking the top spots in the ranking,
+              30 average ratings are added to every rating to form the Bayesian average. As more ratings are received, 
+              the effect of these "damper ratings" is reduced to nil.
+            quote: true
+            tests:
+              - not_null
+          - name: Users rated
+            description: Number of users that gave a review to a boardgame
+            quote: true
+            tests:
+              - not_null
+          - name: url
+            description: boardgame url on boardgamegeek website
+            tests:
+              - not_null
+          - name: Thumbnail
+            description: thumbnail image of the boardgame
+            quote: true
+          - name: updated_at
+            quote: true
+            tests:
+              - not_null
+      - name: reviews
+        description: Reviews made by users with ratings from 1-10 to a boardgame
+        columns: 
+          - name: user
+            descrition: Username registered on boardgamegeek website
+            tests:
+              - not_null
+          - name: rating
+            description: number from 1-10 to rate the boardgame (integer)
+            tests:
+              - not_null
+          - name: id
+            description: Boardgame unique identifier
+            tests:
+              - not_null
+      - name: users
+        description: Users registered on boardgamegeek website
+        columns:
+          - name: users
+            description: Username registered on boardgamegeek website
+            tests:
+              - unique
+              - not_null
+          - name: url
+            description: Url from that user
+            tests:
+              - unique
+              - not_null
+          - name: country
+            description: country where the user was born
