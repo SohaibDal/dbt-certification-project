@@ -42,6 +42,7 @@ models:
 
 seeds:
   dbt_certification_project:
+    +schema: seeds
     +column_types:
       country_name: varchar(100)
       country_code: varchar(3)
