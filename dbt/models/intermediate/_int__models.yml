@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_users_countries_joined
+  - name: int_boardgames__boardgames_filtered

@@ -9,6 +9,14 @@ config-version: 2
 # This setting configures which "profile" dbt uses for this project.
 profile: 'boardgame_project'
 
+# Define variables here
+vars:
+  the_distant_future: '9999-12-31'
+  unknown: 'Unknown'
+  number_unknown: -1
+  min_accepted_num: 1
+  boardgame_type: 'boardgame'
+
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
@@ -23,11 +31,41 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+on-run-start: 
+  - "{{ audit_prep() }}"
+  - "{{ audit_log('run_start') }}"
+on-run-end: 
+  - "{{ audit_log('run_end') }}"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
+models:
+  dbt_certification_project:
+    +pre-hook: 
+      - "{{ log('THIS IS A PRE-HOOK') }}"
+      - "{{ audit_log('model_start') }}"
+    +post-hook: 
+      - "{{ log('THIS IS A POST-HOOK') }}"
+      - "{{ audit_log('model_end') }}"
+    staging:
+      +materialized: view
+      +tags: 
+        - staging
+        - static
+    intermediate:
+      +materialized: ephemeral
+      +tags: 
+        - intermediate
+    marts:
+      +materialized: table
+      +tags:
+        - marts
 
-# In this example config, we tell dbt to build all models in the example/
-# directory as views. These settings can be overridden in the individual model
-# files using the `{{ config(...) }}` macro.
-
+seeds:
+  dbt_certification_project:
+    +schema: seeds
+    +column_types:
+      country_name: varchar(100)
+      country_code: varchar(3)
+    +tags: 
+      - seed
