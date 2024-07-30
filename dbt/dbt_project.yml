@@ -12,6 +12,10 @@ profile: 'boardgame_project'
 # Define variables here
 vars:
   the_distant_future: '9999-12-31'
+  unknown: 'Unknown'
+  number_unknown: -1
+  min_accepted_num: 1
+  boardgame_type: 'boardgame'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -38,8 +42,13 @@ models:
   dbt_certification_project:
     staging:
       +materialized: view
+      +tags: 
+        - staging
+        - static
     intermediate:
       +materialized: ephemeral
+      +tags: 
+        - intermediate
 
 seeds:
   dbt_certification_project:
@@ -47,3 +56,5 @@ seeds:
     +column_types:
       country_name: varchar(100)
       country_code: varchar(3)
+    +tags: 
+      - seed

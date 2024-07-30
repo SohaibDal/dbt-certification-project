@@ -12,11 +12,11 @@ final as (
         users as user_username,
         url as user_url,
         case
-            when trim(country) is NULL then 'Unknown'
-            when trim(country) = 'NA' then 'Unknown'
+            when trim(country) is NULL then '{{ var("unknown") }}'
+            when trim(country) = 'NA' then '{{ var("unknown") }}'
             when country = '
-'   then 'Unknown' 
-            when len(country) = 2 then 'Unknown'
+'   then '{{ var("unknown") }}' 
+            when len(country) = 2 then '{{ var("unknown") }}'
             else trim(country)
         end as country_name
 

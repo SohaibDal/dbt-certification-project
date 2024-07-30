@@ -1,3 +1,4 @@
+
 with
 
 mechanics as (
@@ -11,7 +12,7 @@ final as (
     select
         game_id as boardgame_id,
         case
-            when mechanics = '0' then 'Unknown'
+            when mechanics = '0' then '{{ var("unknown") }}'
             else mechanics
         end as mechanic_name
 

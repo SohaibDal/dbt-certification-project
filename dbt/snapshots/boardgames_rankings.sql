@@ -2,27 +2,26 @@
 
 {{
     config(
-      target_database='boardgame',
-      target_schema='dbt_sansari',
+      target_schema='snapshots',
       unique_key='id',
-
       strategy='timestamp',
       updated_at='updated_at',
+      tags="daily"
     )
 }}
 
 select 
-    ID,
+    id,
     "Name",
     "Year",
     "Rank",
     "Average",
     "Bayes average",
     "Users rated",
-    URL,
+    url,
     "Thumbnail",
     "updated_at" as updated_at
-
+ 
 from {{ source('boardgame', 'rankings') }}
 
 {% endsnapshot %}
