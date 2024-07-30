@@ -94,3 +94,5 @@ models:
               name: relationships_fct_reviews_boardgame_key
               to: ref('dim_boardgames')
               field: boardgame_key
+      - name: review_rating
+        description: '{{ doc("review_rating_description") }}'
