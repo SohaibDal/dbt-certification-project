@@ -32,6 +32,7 @@ sources:
             description: Type of game (ex. boardgame)
             tests:
               - accepted_values:
+                  name: accepted_boardgames_types
                   values: [bgsleeve, boardgame, boardgameaccessory, boardgameexpansion, boardgameissue, puzzle, rpgissue, rpgitem, videogame, videogamecompilation, videogameexpansion, videogamehardware]
           - name: rating
             description: average from all the ratings from the reviews (0-10)
@@ -110,7 +111,7 @@ sources:
             tests:
               - not_null
       - name: rankings
-        description: Daily ranking of boardgames based on users ratings        
+        description: Daily ranking of boardgames based on users ratings
         freshness:
           warn_after: {count: 24, period: hour}
           error_after: {count: 48, period: hour}
