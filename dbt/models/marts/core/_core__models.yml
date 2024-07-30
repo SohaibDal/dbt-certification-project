@@ -1,0 +1,96 @@
+version: 2
+
+models:
+  - name: dim_users
+    columns:
+      - name: user_key
+        tests:
+          - unique
+  - name: dim_artists
+    columns:
+      - name: artist_key
+        tests:
+          - unique
+      - name: boardgame_key
+        tests:
+          - relationships:
+              name: relationships_dim_artists_boardgame_key
+              to: ref('dim_boardgames')
+              field: boardgame_key
+  - name: dim_categories
+    columns:
+      - name: category_key
+        tests:
+          - unique
+      - name: boardgame_key
+        tests:
+          - relationships:
+              name: relationships_dim_categories_boardgame_key
+              to: ref('dim_boardgames')
+              field: boardgame_key
+  - name: dim_designers
+    columns:
+      - name: designer_key
+        tests:
+          - unique
+      - name: boardgame_key
+        tests:
+          - relationships:
+              name: relationships_dim_designers_boardgame_key
+              to: ref('dim_boardgames')
+              field: boardgame_key
+  - name: dim_mechanics
+    columns:
+      - name: mechanic_key
+        tests:
+          - unique
+      - name: boardgame_key
+        tests:
+          - relationships:
+              name: relationships_dim_mechanics_boardgame_key
+              to: ref('dim_boardgames')
+              field: boardgame_key
+  - name: dim_publishers
+    columns:
+      - name: publisher_key
+        tests:
+          - unique
+      - name: boardgame_key
+        tests:
+          - relationships:
+              name: relationships_dim_publishers_boardgame_key
+              to: ref('dim_boardgames')
+              field: boardgame_key
+  - name: dim_rankings
+    columns:
+      - name: ranking_key
+        tests:
+          - unique
+      - name: boardgame_key
+        tests:
+          - relationships:
+              name: relationships_dim_rankings_boardgame_key
+              to: ref('dim_boardgames')
+              field: boardgame_key
+  - name: dim_boardgames
+    columns:
+      - name: boardgame_key
+        tests:
+          - unique
+  - name: fct_reviews
+    columns:
+      - name: review_key
+        tests:
+          - unique
+      - name: user_key
+        tests:
+          - relationships:
+              name: relationships_fct_reviews_user_key
+              to: ref('dim_users')
+              field: user_key
+      - name: boardgame_key
+        tests:
+          - relationships:
+              name: relationships_fct_reviews_boardgame_key
+              to: ref('dim_boardgames')
+              field: boardgame_key
